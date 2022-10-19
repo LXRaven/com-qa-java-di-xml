@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="customer1" class="com.qa.spring.di.xml.beans.Customer" lazy-init="true" scope="singleton" init-method="init" destroy-method="destroy">
+		<property name="id" value="123"></property>
+		<property name="name" value="Customer One"></property>
+		<property name="email" value="customer.one@mail.com"></property>
+		<property name="contactNo" value="0758985426"></property>
+		<property name="ordersList">
+			<list>
+				<ref bean="order1" />
+				<ref bean="order2" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="customer2" class="com.qa.spring.di.xml.beans.Customer" lazy-init="true" scope="singleton" init-method="init" destroy-method="destroy">
+		<property name="id" value="234"></property>
+		<property name="name" value="Customer Two"></property>
+		<property name="email" value="customer.two@mail.com"></property>
+		<property name="contactNo" value="0753456426"></property>
+		<property name="ordersList">
+			<list>
+				<ref bean="order3" />
+				<ref bean="order4" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="customer3" class="com.qa.spring.di.xml.beans.Customer" lazy-init="true" scope="singleton" init-method="init" destroy-method="destroy">
+		<property name="id" value="345"></property>
+		<property name="name" value="Customer Three"></property>
+		<property name="email" value="customer.three@mail.com"></property>
+		<property name="contactNo" value="0758345426"></property>
+		<property name="ordersList">
+			<list>
+				<ref bean="order5" />
+				<ref bean="order6" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="order1" class="com.qa.spring.di.xml.beans.Order" lazy-init="true" scope="prototype" init-method="init" destroy-method="destroy">
+		<property name="id" value="0001"></property>
+		<property name="orderValue" value="256.35"></property>
+		<property name="customerId" value="123"></property>
+		<property name="orderDate" value="01/03/2022"></property>
+	</bean>
+
+	<bean id="order2" class="com.qa.spring.di.xml.beans.Order" lazy-init="true" scope="prototype" init-method="init" destroy-method="destroy">
+		<property name="id" value="0002"></property>
+		<property name="customerId" value="123"></property>
+		<property name="orderValue" value="234.35"></property>
+		<property name="orderDate" value="02/05/2022"></property>
+	</bean>
+
+	<bean id="order3" class="com.qa.spring.di.xml.beans.Order" lazy-init="true" scope="prototype" init-method="init" destroy-method="destroy">
+		<property name="id" value="0003"></property>
+		<property name="customerId" value="234"></property>
+		<property name="orderValue" value="453.35"></property>
+		<property name="orderDate" value="05/07/2022"></property>
+	</bean>
+
+	<bean id="order4" class="com.qa.spring.di.xml.beans.Order" lazy-init="true" scope="prototype" init-method="init" destroy-method="destroy">
+		<property name="id" value="0004"></property>
+		<property name="customerId" value="234"></property>
+		<property name="orderValue" value="211.35"></property>
+		<property name="orderDate" value="04/10/2022"></property>
+	</bean>
+
+	<bean id="order5" class="com.qa.spring.di.xml.beans.Order" lazy-init="true" scope="prototype" init-method="init" destroy-method="destroy">
+		<property name="id" value="0005"></property>
+		<property name="customerId" value="345"></property>
+		<property name="orderValue" value="433.35"></property>
+		<property name="orderDate" value="14/05/2022"></property>
+	</bean>
+
+	<bean id="order6" class="com.qa.spring.di.xml.beans.Order" lazy-init="true" scope="prototype" init-method="init" destroy-method="destroy">
+		<property name="id" value="0006"></property>
+		<property name="customerId" value="345"></property>
+		<property name="orderValue" value="4343.35"></property>
+		<property name="orderDate" value="19/08/2022"></property>
+	</bean>
+</beans>
